@@ -11,10 +11,11 @@ $(document).ready(function(){
 	//this contains the query
 	var duration = params.duration;
 	var duration_text = decodeURI(duration);
-	console.log("duration is: "+duration);
 	var location = params.location;
 	var location_text = decodeURI(location);
-	console.log("location is: "+location);
+
+	$("#location").html("<p>The location you entered is: "+location_text+"</p>");
+	$("#duration").html("<p>The duration you entered is: "+duration_text+"</p>");
 
 
 
@@ -43,7 +44,6 @@ $(document).ready(function(){
 				if(JSON_RESPONSE.hasOwnProperty(key))
 					size++;
 			}
-			console.log("size: "+size);
 
 			for(var index = 0; index < size; index++)
 			{
