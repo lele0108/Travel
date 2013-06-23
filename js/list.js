@@ -36,24 +36,25 @@ $(document).ready(function(){
 	the_model.fetch({
 		success: function(response){
 			JSON_RESPONSE = response.toJSON();
-			console.log(JSON_RESPONSE);
+			best_trip = JSON_RESPONSE[0];
+			console.log(best_trip);
 
 			var size = 0;
-			for (var key in JSON_RESPONSE)
+			for (var key in best_trip)
 			{
-				if(JSON_RESPONSE.hasOwnProperty(key))
+				if(best_trip.hasOwnProperty(key))
 					size++;
-			}
+			} 
 
-			for(var index = 0; index < size; index++)
+			console.log("size is: "+size);
+			for (var index = 0; index < size; index++)
 			{
-				html_insert += "<ul>";
-				html_insert += "<li>Score: "+(JSON_RESPONSE[index].score).toString()+"</li>";
-				html_insert += "<li>Time: "+(JSON_RESPONSE[index].time).toString()+"</li>";
-				html_insert += "<li>Distance: "+(JSON_RESPONSE[index].distance).toString()+"</li>";
-				html_insert += "</ul>";
+				var place = best_trip.place[index];
+				html_insert += "<p>Place Name"+place.placeName+"</p>";
 			}
 			$("#content").html(html_insert);
+
+
 		}
 	});
 });

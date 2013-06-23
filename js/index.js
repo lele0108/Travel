@@ -27,6 +27,8 @@ $("#city").keypress(function(event){
 $("#city").keyup(function(event){
 	if($("#city").val()=='San Francisco' || $("#city").val()=='Boston' || $("#city").val()=='New York')
 		$("#starting_point").css('display', 'block');
+	else
+		$("#starting_point").css('display', 'none');
 });
 
 $("#duration").keypress(function(event){
