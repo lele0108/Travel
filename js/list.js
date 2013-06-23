@@ -10,8 +10,10 @@ $(document).ready(function(){
 	}
 	//this contains the query
 	var duration = params.duration;
+	var duration_text = decodeURI(duration);
 	console.log("duration is: "+duration);
 	var location = params.location;
+	var location_text = decodeURI(location);
 	console.log("location is: "+location);
 
 
@@ -43,12 +45,14 @@ $(document).ready(function(){
 			}
 			console.log("size: "+size);
 
-			html_insert += "<ul>";
 			for(var index = 0; index < size; index++)
 			{
-				html_insert += "<li>"+(JSON_RESPONSE[index].score).toString()+"</li>";
+				html_insert += "<ul>";
+				html_insert += "<li>Score: "+(JSON_RESPONSE[index].score).toString()+"</li>";
+				html_insert += "<li>Time: "+(JSON_RESPONSE[index].time).toString()+"</li>";
+				html_insert += "<li>Distance: "+(JSON_RESPONSE[index].distance).toString()+"</li>";
+				html_insert += "</ul>";
 			}
-			html_insert +="</ul";
 			$("#content").html(html_insert);
 		}
 	});
