@@ -6,17 +6,29 @@ $(document).ready(function(){
 	 		response(results.slice(0, 10));
 	 	}
 	 });
+
+	 var cities = ["San Francisco", "Boston", "New YorK"];
+	 $("#city").autocomplete({
+	 	source: cities
+	 });
+
 });
 
 
 
-$("#location").keypress(function(event){
+$("#city").keypress(function(event){
 	if(event.which == 13)
 	{
 		event.preventDefault();
 		window.location = "/list.html?location="+$("#location").text()+"&duration="+$("#duration").text();
 	}
 });
+
+$("#city").keyup(function(event){
+	if($("#city").val()=='San Francisco' || $("#city").val()=='Boston' || $("#city").val()=='New York')
+		$("#starting_point").css('display', 'block');
+});
+
 $("#duration").keypress(function(event){
 	if(event.which == 13)
 	{
