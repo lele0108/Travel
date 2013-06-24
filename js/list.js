@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	var prmstr = window.location.search.substr(1);
 	var prmarr = prmstr.split ("&");
 	var params = {};
