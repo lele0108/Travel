@@ -39,22 +39,19 @@ $(document).ready(function(){
 			if(JSON_RESPONSE[0] != null)
 				best_trip = JSON_RESPONSE[0];
 			
-			console.log(best_trip);
-			console.log("length of array is: "+best_trip.place.length)
+			var trip_array = JSON.parse(best_trip.place);
+			console.log(trip_array);
+			var trip_length = trip_array.length;
 
-			var size = 0;
-			for (var key in best_trip.place)
+			for(var index = 1; index < trip_length+1; index++)
 			{
-				if(best_trip.place.hasOwnProperty(key))
-					size++;
-			} 
-
-			console.log("size is: "+size);
-			for (var index = 0; index < size; index++)
-			{
-				var place = best_trip.place[index];
-				html_insert += "<p>Place Name: "+place.placeName+"</p>";
+				html_insert += "<p>"+index+". Place Name: "+trip_array[index-1].placeName+"</p>";
+				html_insert += "<ul>";
+				html_insert += "<li>Latitude: "+trip_array[index-1].lat+"</li>";
+				html_insert += "<li>Longitutde: "+trip_array[index-1].lon+"</li>";
+				html_insert += "</ul>";
 			}
+
 			$("#content").html(html_insert);
 
 
