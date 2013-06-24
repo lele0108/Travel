@@ -49,7 +49,7 @@ $(document).ready(function(){
 				array.push(response.changed[i]);
 			}
 
-			$("#location").autocomplete({
+			$("#location_place").autocomplete({
 				source: function(request, response){
 			 		var results = $.ui.autocomplete.filter(array, request.term);
 			 		response(results.slice(0, 10));
@@ -61,22 +61,25 @@ $(document).ready(function(){
 });
 
 
+setInterval(function(){
+	if($("#city").val()=='San Francisco' || $("#city").val()=='Boston' || $("#city").val()=='New York')
+		$("#point_interest").css('display', 'block');
+	else
+		$("#point_interest").css('display', 'none');
+}, 20);
+
 
 $("#city").keypress(function(event){
 	if(event.which == 13)
 	{
 		event.preventDefault();
 		if($('#duration').val() == '')
-			$('duration').val('3');
-		window.location = "list.html?location="+$("#city").val()+"&duration="+$("#duration").val();
+		{
+			$('#duration').val('3');
+		}
+		alert($("#location_place").val());
+		window.location = "list.html?city="+$("#city").val()+"&duration="+$("#duration").val()+"&location="+$("#location_place").val();
 	}
-});
-
-$("#city").keyup(function(event){
-	if($("#city").val()=='San Francisco' || $("#city").val()=='Boston' || $("#city").val()=='New York')
-		$("#starting_point").css('display', 'block');
-	else
-		$("#starting_point").css('display', 'none');
 });
 
 $("#duration").keypress(function(event){
@@ -84,8 +87,22 @@ $("#duration").keypress(function(event){
 	{
 		event.preventDefault();
 		if($('#duration').val() == '')
-			$('duration').val('3');
-		window.location = "list.html?location="+$("#city").val()+"&duration="+$("#duration").val();
+		{
+			$('#duration').val('3');
+		}
+		window.location = "list.html?city="+$("#city").val()+"&duration="+$("#duration").val()+"&location="+$("#location_place").val();
+	}
+});
+
+$("#location_place").keypress(function(event){
+	if(event.which == 13)
+	{
+		event.preventDefault();
+		if($('#duration').val() == '')
+		{
+			$('#duration').val('3');
+		}
+		window.location = "list.html?city="+$("#city").val()+"&duration="+$("#duration").val()+"&location="+$("#location_place").val();
 	}
 });
 
