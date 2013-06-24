@@ -8,13 +8,25 @@ $(document).ready(function(){
 		}
 	});
 
-	var get_stuff = new GET_PLACES({id:''});
+	var get_stuff = new GET_PLACES();
 	get_stuff.url = 'http://blankket-mk8te7kbzv.elasticbeanstalk.com/getcities';
 	get_stuff.fetch({
 		success: function(response){
-			console.log(response);
+			var array = [];
+
+			var size = 0;
+			for (var key in response.changed)
+			{
+				if(response.changed.hasOwnProperty(key))
+					size++;
+			} 
+
+			for (var i = 0; i < size; i++)
+			{
+				array.push(response.changed[i]);
+			}
 			$("#city").autocomplete({
-		 	source: response
+		 	source: array
 		 	});
 		}
 	});
@@ -22,9 +34,24 @@ $(document).ready(function(){
 	get_stuff.url = 'http://blankket-mk8te7kbzv.elasticbeanstalk.com/getplaces?city=San%20Francisco';
 	get_stuff.fetch({
 		success: function(response){
+			console.log(response);
+			var array = [];
+
+			var size = 0;
+			for (var key in response.changed)
+			{
+				if(response.changed.hasOwnProperty(key))
+					size++;
+			}
+
+			for (var i = 0; i < size; i++)
+			{
+				array.push(response.changed[i]);
+			}
+
 			$("#location").autocomplete({
 				source: function(request, response){
-			 		var results = $.ui.autocomplete.filter(availableTags, request.term);
+			 		var results = $.ui.autocomplete.filter(array, request.term);
 			 		response(results.slice(0, 10));
 			 	}
 			});
