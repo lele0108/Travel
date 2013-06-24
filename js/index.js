@@ -77,7 +77,6 @@ $("#city").keypress(function(event){
 		{
 			$('#duration').val('3');
 		}
-		alert($("#location_place").val());
 		window.location = "list.html?city="+$("#city").val()+"&duration="+$("#duration").val()+"&location="+$("#location_place").val();
 	}
 });

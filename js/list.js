@@ -10,11 +10,14 @@ $(document).ready(function(){
 	//this contains the query
 	var duration = params.duration;
 	var duration_text = decodeURI(duration);
+	var city = params.location;
+	var city_text = decodeURI(location);
 	var location = params.location;
 	var location_text = decodeURI(location);
 
 	$("#location").html("<p>The location you entered is: "+location_text+"</p>");
 	$("#duration").html("<p>The duration you entered is: "+duration_text+"</p>");
+	$("#duration").html("<p>The duration you entered is: "+city_text+"</p>");
 
 
 
