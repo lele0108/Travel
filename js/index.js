@@ -105,5 +105,49 @@ $("#location_place").keypress(function(event){
 	}
 });
 
+// Makes sure input is always a number. REMEMBER we still need some server side validations.
+
+addEvent(document.getElementById('duration'),'keyup',validate);
+addEvent(document.getElementById('duration'),'mouseover',validate);
+
+function validate(event){
+    
+    var str=this.value;
+    
+    var charsAllowed="0123456789";
+    var allowed;
+    
+    for(var i=0;i<this.value.length;i++){
+        
+        allowed=false;
+        
+        for(var j=0;j<charsAllowed.length;j++){
+            if( this.value.charAt(i)==charsAllowed.charAt(j) ){ allowed=true; }
+        }
+        
+        if(allowed==false){ this.value = this.value.replace(this.value.charAt(i),""); i--; }
+    }
+    
+    return true;
+}
+
+
+
+function addEvent(obj,type,fn) {
+ 
+    if (obj.addEventListener) {
+        obj.addEventListener(type,fn,false);
+        return true;
+    } else if (obj.attachEvent) {
+        obj['e'+type+fn] = fn;
+        obj[type+fn] = function() { obj['e'+type+fn]( window.event );}
+        var r = obj.attachEvent('on'+type, obj[type+fn]);
+        return r;
+    } else {
+        obj['on'+type] = fn;
+        return true;
+    }
+}
+
 
 
