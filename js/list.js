@@ -17,8 +17,6 @@ $(document).ready(function(){
 
 	$("#location").html("<p>The location you entered is: "+location_text+"</p>");
 	$("#duration").html("<p>The duration you entered is: "+duration_text+"</p>");
-	$("#duration").html("<p>The duration you entered is: "+city_text+"</p>");
-
 
 
 	var JSON_RESPONSE;

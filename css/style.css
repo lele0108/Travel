@@ -65,3 +65,16 @@ p, h1, h2 {
     padding: 10px 50px 20px 50px;
     width: 95px;
     overflow: hidden; }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  opacity: 0.4;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  opacity: 0.4;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  opacity: 0.4;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  opacity:0.4;
+}
