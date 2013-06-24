@@ -28,7 +28,7 @@ $(document).ready(function(){
 			// set defaults here!
 		},
 		initialize: function(){
-			console.log("MyModel made.");
+			//constructor for this model
 		}
 	});
 	var the_model = new MyModel();
@@ -39,7 +39,8 @@ $(document).ready(function(){
 			if(JSON_RESPONSE[0] != null)
 				best_trip = JSON_RESPONSE[0];
 			
-			var trip_array = JSON.parse(best_trip.place);
+			console.log(best_trip);
+			var trip_array = best_trip.place.elements;
 			console.log(trip_array);
 			var trip_length = trip_array.length;
 
@@ -48,7 +49,9 @@ $(document).ready(function(){
 				html_insert += "<p>"+index+". Place Name: "+trip_array[index-1].placeName+"</p>";
 				html_insert += "<ul>";
 				html_insert += "<li>Latitude: "+trip_array[index-1].lat+"</li>";
-				html_insert += "<li>Longitutde: "+trip_array[index-1].lon+"</li>";
+				html_insert += "<li>Longitude: "+trip_array[index-1].lon+"</li>";
+				html_insert += "<li>Time to spend here: "+trip_array[index-1].avgTimeSpent+"</li>";
+				html_insert += "<li style='color:#42ba98;'>Traverse Score&copy; : "+trip_array[index-1].score+"</li>";
 				html_insert += "</ul>";
 			}
 
