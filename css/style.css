@@ -19,7 +19,7 @@ p, h1, h2 {
     font-weight: 600;
     color: #bdc3c7;
     line-height: 55px;
-    padding: 15px;
+    padding: 15px 15px 15px 40px;
     background-color: purple;
     border-radius: 8px; }
 
@@ -58,9 +58,19 @@ p, h1, h2 {
   color: white;
   border: 2px solid white; }
 
+.search {
+  padding: 33px;
+  background-color: purple;
+  border: 0px;
+  border-radius: 8px;
+  color: white;
+  margin-left: -42px;
+  font-size: 42px;
+  font-weight: 600; }
+
 .learn {
   margin-left: 15px;
-  top: 135px;
+  top: 80px;
   position: relative; }
   .learn p {
     color: black;
