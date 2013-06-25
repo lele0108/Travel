@@ -18,10 +18,14 @@ p, h1, h2 {
     font-size: 42px;
     font-weight: 600;
     color: #bdc3c7;
-    line-height: 55px; }
+    line-height: 55px;
+    padding: 15px;
+    background-color: purple;
+    border-radius: 8px; }
 
 ::-webkit-input-placeholder {
-  color: white !important; }
+  color: white !important;
+  opacity: 0.4; }
 
 .location {
   background-color: transparent !important;
@@ -65,16 +69,3 @@ p, h1, h2 {
     padding: 10px 50px 20px 50px;
     width: 95px;
     overflow: hidden; }
-
-::-webkit-input-placeholder { /* WebKit browsers */
-  opacity: 0.4;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  opacity: 0.4;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  opacity: 0.4;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  opacity:0.4;
-}

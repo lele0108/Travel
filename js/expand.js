@@ -1,5 +1,5 @@
 (function(){
-    var min = 175, max = 900, pad_right = 5, input = document.getElementById('location');
+    var min = 175, max = 900, pad_right = 5, input = document.getElementById('city');
 
     input.style.width = min+'px';
     input.onkeypress = input.onkeydown = input.onkeyup = function(){
