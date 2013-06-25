@@ -68,6 +68,9 @@ p, h1, h2 {
   font-size: 42px;
   font-weight: 600; }
 
+.search:hover {
+  background-color: #992890; }
+
 .learn {
   margin-left: 15px;
   top: 80px;
