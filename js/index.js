@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
+	$("#city").focus();
+
 	GET_PLACES = Backbone.Model.extend({
 		urlRoot: "",
 		defaults:{},
 		initialize: function(){
-			console.log("get places made");
 		}
 	});
 
@@ -34,7 +35,6 @@ $(document).ready(function(){
 	get_stuff.url = 'http://blankket-mk8te7kbzv.elasticbeanstalk.com/getplaces?city=San%20Francisco';
 	get_stuff.fetch({
 		success: function(response){
-			console.log(response);
 			var array = [];
 
 			var size = 0;
