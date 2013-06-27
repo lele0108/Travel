@@ -43,19 +43,27 @@ $(document).ready(function(){
 			var trip_array = best_trip.place.elements;
 			console.log(trip_array);
 			var trip_length = trip_array.length;
+			var backg = 0;
 
-			for(var index = 1; index < trip_length+1; index++)
+			for(var index = 0; index < trip_length; index++)
 			{
-				html_insert += "<p>"+index+". Place Name: "+trip_array[index-1].placeName+"</p>";
-				html_insert += "<ul>";
-				html_insert += "<li>Latitude: "+trip_array[index-1].lat+"</li>";
-				html_insert += "<li>Longitude: "+trip_array[index-1].lon+"</li>";
-				html_insert += "<li>Time to spend here: "+trip_array[index-1].avgTimeSpent+"</li>";
-				html_insert += "<li style='color:#42ba98;'>Traverse Score&copy; : "+trip_array[index-1].score+"</li>";
-				html_insert += "</ul>";
+				backg++;
+				if(backg%2 == 0)
+					html_insert += "<div class='location-light row-fluid'>";
+				else
+					html_insert += "<div class='location-light row-fluid'>";
+				html_insert += "<div class='num'>"+(index+1)+".</div>";
+				html_insert += "<div class='info'>"
+				html_insert += "<p class='title'>Place Name: "+trip_array[index].placeName+"</p>";
+				html_insert += "<p>Latitude: "+trip_array[index].lat+"</p>";
+				html_insert += "<p>Longitude: "+trip_array[index].lon+"</p>";
+				html_insert += "<p>Time to spend here: "+trip_array[index].avgTimeSpent+" minutes</p>";
+				html_insert += "<p style='color:#42ba98;'>Traverse Score&copy; : "+trip_array[index].score+"</p></div>";
+				html_insert += "<img src='http://lorempixel.com/300/100/city/' class='place_img'>";
+				html_insert += "</div><hr>";
 			}
 
-			$("#content").html(html_insert);
+			$(".content").html(html_insert);
 
 
 		}
