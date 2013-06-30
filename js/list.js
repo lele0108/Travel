@@ -1,3 +1,5 @@
+var trip_array;
+
 $(document).ready(function(){
 	var prmstr = window.location.search.substr(1);
 	var prmarr = prmstr.split ("&");
@@ -40,35 +42,36 @@ $(document).ready(function(){
 				best_trip = JSON_RESPONSE[0];
 			
 			console.log(best_trip);
-			var trip_array = best_trip.place.elements;
+			trip_array = best_trip.place.elements;
 			console.log(trip_array);
 			var trip_length = trip_array.length;
-			var backg = 0;
 
 			for(var index = 0; index < trip_length; index++)
 			{
-				backg++;
-				if(backg%2 == 0)
-					html_insert += "<div class='location-light row-fluid'>";
-				else
-					html_insert += "<div class='location-light row-fluid'>";
-				html_insert += "<div class='num'>"+(index+1)+".</div>";
-				html_insert += "<div class='info'>"
-				html_insert += "<p class='title'>Place Name: "+trip_array[index].placeName+"</p>";
-				html_insert += "<p>Latitude: "+trip_array[index].lat+"</p>";
-				html_insert += "<p>Longitude: "+trip_array[index].lon+"</p>";
-				html_insert += "<p>Time to spend here: "+trip_array[index].avgTimeSpent+" minutes</p>";
-				html_insert += "<p style='color:#42ba98;'>Traverse Score&copy; : "+trip_array[index].score+"</p></div>";
-				html_insert += "<img src='http://lorempixel.com/300/100/city/' class='place_img'>";
-				html_insert += "</div><hr>";
+				html_insert += "<a class='place_link' href='#'><div onclick='clicked(this);' id='"+index+"' class='row-fluid place'>";
+				html_insert += "<div class='info'>";
+				html_insert += "<p class='title'>"+(index+1)+". "+trip_array[index].placeName+"</p>";
+				html_insert += "</div></div></a><hr>";
 			}
 
-			$(".content").html(html_insert);
+			$(".locations").html(html_insert);
 
 
 		}
 	});
 });
+
+function clicked(place)
+{
+	var id = place.id;
+	var place_obj = trip_array[id];
+	var insert = "<h3><u>"+place_obj.placeName+"</u></h3>";
+	insert += "<p>Time to spend here: "+place_obj.avgTimeSpent+"</p>";
+	insert += "<p>Traverse Score: "+place_obj.score+"</p>";
+	$(".details").transition({height:'300px'});
+	$(".details_contents").html(insert);
+}
+
 
 
 

@@ -3,6 +3,12 @@
  	font-family: "Open Sans", sans-serif; 
 }
 
+body
+{
+	background-image:url(../img/cover.png);
+	background-repeat:repeat;
+}
+
 .header
 {
 	padding-top:20px;
@@ -24,41 +30,65 @@
 	display:inline-block;
 }
 
-.location-dark
+.locations
 {
-	background: rgb(246,248,249); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); 
-	background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	display:inline-block;
+	background:white;
+	border:2px solid #5E5E5E;
+}
+
+.details
+{
+	border:2px solid #5E5E5E;
+	margin-left:0px !important;
+	background-color:white;
+	border-left-width:0px;
+}
+
+.details_contents
+{
+	margin-left:10px;
 }
 
 .title
 {
-	font-size:20px;
-}
-
-.info
-{
-	display:inline-block;
-	width:55%;
-	height:100%;
+	font-size:30px;
 }
 
 .num
 {
 	text-align:center;
 	display:inline-block;
+	vertical-align:middle;
 	width:10%;
 	height:100%;
 	font-size:50px;
-	padding-bottom:30px;
 }
 
-.location-light
+.place
 {
-	display:inline-block;
+	padding-top:15px;
+	padding-bottom:15px;
+	color:black;
+}
+
+.place:hover
+{
+	background-color:#D1D1D1;
+}
+
+.place:active
+{
+	background-color:#C7C7C7;
+}
+
+.info
+{
+	margin-left:10px;
+}
+
+hr
+{
+	margin-top:0px;
+	margin-bottom:0px;
 }
