@@ -1,4 +1,5 @@
 var trip_array;
+var id;
 
 $(document).ready(function(){
 	var prmstr = window.location.search.substr(1);
@@ -48,7 +49,7 @@ $(document).ready(function(){
 
 			for(var index = 0; index < trip_length; index++)
 			{
-				html_insert += "<a class='place_link' href='#'><div onclick='clicked(this);' id='"+index+"' class='row-fluid place'>";
+				html_insert += "<a class='place_link' href='#'><div onClick='clicked(this);' id='"+index+"' class='place'>";
 				html_insert += "<div class='info'>";
 				html_insert += "<p class='title'>"+(index+1)+". "+trip_array[index].placeName+"</p>";
 				html_insert += "</div></div></a><hr>";
@@ -63,13 +64,18 @@ $(document).ready(function(){
 
 function clicked(place)
 {
-	var id = place.id;
+	if (id != null)
+	{
+		$(id).removeClass("place_clicked");
+	}
+	id = place.id;
 	var place_obj = trip_array[id];
+	$(id).addClass(".place_clicked");
 	var insert = "<h3><u>"+place_obj.placeName+"</u></h3>";
 	insert += "<p>Time to spend here: "+place_obj.avgTimeSpent+"</p>";
 	insert += "<p>Traverse Score: "+place_obj.score+"</p>";
 	$(".details").transition({height:'300px'});
-	$(".details_contents").html(insert);
+	$(".details").html(insert);
 }
 
 

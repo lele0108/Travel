@@ -35,6 +35,7 @@ body
 	display:inline-block;
 	background:white;
 	border:2px solid #5E5E5E;
+	border-radius:10px;
 }
 
 .details
@@ -43,16 +44,15 @@ body
 	margin-left:0px !important;
 	background-color:white;
 	border-left-width:0px;
-}
-
-.details_contents
-{
-	margin-left:10px;
+	border-radius:10px;
+	padding-left:10px;
+	display:none;
 }
 
 .title
 {
 	font-size:30px;
+	text-decoration:none;
 }
 
 .num
@@ -85,6 +85,11 @@ body
 .info
 {
 	margin-left:10px;
+}
+
+.place_clicked
+{
+	background-color:#C7C7C7;
 }
 
 hr

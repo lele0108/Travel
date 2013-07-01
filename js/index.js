@@ -60,6 +60,14 @@ $(document).ready(function(){
 
 });
 
+$(".search").click(function(){
+	if($('#duration').val() == '')
+	{
+		$('#duration').val('3');
+	}
+	window.location = "list.html?city="+$("#city").val()+"&duration="+$("#duration").val()+"&location="+$("#location_place").val();
+});
+
 
 setInterval(function(){
 	if($("#city").val()=='San Francisco' || $("#city").val()=='Boston' || $("#city").val()=='New York')
