@@ -82,3 +82,39 @@ p, h1, h2 {
     padding: 10px 50px 20px 50px;
     width: 95px;
     overflow: hidden; }
+
+.headerbar {
+  padding: 20px; }
+
+.locationbar {
+  background-color: #bdc3c7;
+  padding: 40px; }
+
+.border input {
+  background-color: gray;
+  border: 10px solid black;
+  height: 30px;
+  margin: 0px 15px 0px 0px;
+  border-radius: 3px;
+  color: white; }
+
+.border input:focus {
+  box-shadow: none !important;
+  border: 10px solid black !important; }
+
+.choice {
+  background-color: #bdc3c7;
+  margin: 30px 0px 30px 0px;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+  padding: 0px 0px 10px 0px; }
+  .choice p {
+    background-color: gray;
+    width: 100%; }
+
+.choice:hover {
+  opacity: 0.6; }
+
+.footer {
+  background-color: gray;
+  padding: 20px; }
