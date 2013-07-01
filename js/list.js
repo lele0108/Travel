@@ -42,9 +42,7 @@ $(document).ready(function(){
 			if(JSON_RESPONSE[0] != null)
 				best_trip = JSON_RESPONSE[0];
 			
-			console.log(best_trip);
 			trip_array = best_trip.place.elements;
-			console.log(trip_array);
 			var trip_length = trip_array.length;
 
 			for(var index = 0; index < trip_length; index++)
@@ -66,16 +64,36 @@ function clicked(place)
 {
 	if (id != null)
 	{
-		$(id).removeClass("place_clicked");
+		$("#"+id).removeClass("place_clicked");
 	}
 	id = place.id;
 	var place_obj = trip_array[id];
-	$(id).addClass(".place_clicked");
+	console.log(place_obj);
+	$("#"+id).addClass(".place_clicked");
 	var insert = "<h3><u>"+place_obj.placeName+"</u></h3>";
-	insert += "<p>Time to spend here: "+place_obj.avgTimeSpent+"</p>";
-	insert += "<p>Traverse Score: "+place_obj.score+"</p>";
-	$(".details").transition({height:'300px'});
+	insert += "<p>Time to spend here: "+place_obj.avgTimeSpent+" minutes</p>";
+	insert += "<p class='score'>Traverse Score: "+place_obj.score+"</p>";
+	insert += "<div id='map'></div>";
+
+	var point = new google.maps.LatLng(place_obj.lat, place_obj.lon);
+
+	// now doing google map
+	var mapOptions = {
+    zoom: 15,
+    center: point,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  	}
+
 	$(".details").html(insert);
+	$(".details").slideDown('slow');
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+	var marker = new google.maps.Marker({
+		position: point,
+		animation: google.maps.Animation.DROP,
+		map: map, 
+		title: place_obj.placeName
+	});
 }
 
 

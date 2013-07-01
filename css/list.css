@@ -97,3 +97,15 @@ hr
 	margin-top:0px;
 	margin-bottom:0px;
 }
+
+#map
+{
+	width:80%;
+	height:400px;
+	margin-bottom:20px;
+}
+
+.score
+{
+	color:#02c2e9;
+}
