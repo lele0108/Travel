@@ -64,12 +64,14 @@ function clicked(place)
 {
 	if (id != null)
 	{
-		$("#"+id).removeClass("place_clicked");
+		var last = document.getElementById(id);
+		last.className = "place";
 	}
 	id = place.id;
+	var current = document.getElementById(id);
+	current.className = current.className + " place_clicked";
 	var place_obj = trip_array[id];
 	console.log(place_obj);
-	$("#"+id).addClass(".place_clicked");
 	var insert = "<h3><u>"+place_obj.placeName+"</u></h3>";
 	insert += "<p>Time to spend here: "+place_obj.avgTimeSpent+" minutes</p>";
 	insert += "<p class='score'>Traverse Score: "+place_obj.score+"</p>";
