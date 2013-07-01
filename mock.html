@@ -3,12 +3,9 @@
   <head>
     <title>Traverse Results</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/results.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/timeline.css">
-    <script src="js/libs/modernizr-2.5.3.min.js"></script>
   </head>
   <body>
 
@@ -30,45 +27,7 @@
       </div>
     </div>
 
-    <div class="locationbar">
-      <div class="row">
-        <div class="container">
-          <div class="span10 offset1">
-            <div class="row">
-              <div class="span10">
-                <div class="border">
-                  <center><form class="form-inline">
-                    <input type="text" class="input-large" placeholder="Location">
-                    <input type="password" class="input-large" placeholder="Date">
-                    <input type="password" class="input-large" placeholder="Starting Location">
-                  </form></center>
-                </div>
-              </div>
-            </div>
-          </div>  
-        </div>
-      </div>
-    </div>
 
-      <div id="page">
-        <div role="main" class="clearfix">
-          <div id="buttons">
-            <div id="expand-collapse-buttons">
-              <a class="expand-all active" href="#"><span>EXPAND ALL</span></a>
-              <a class="collapse-all" href="#"><span>COLLAPSE ALL</span></a>
-            </div>
-            <div id="sort-buttons">
-              <a class="sort-newest active" href="#"><span>NEWEST FIRST</span></a>
-              <a class="sort-oldest" href="#"><span>OLDEST FIRST</span></a>
-            </div>
-          </div>
-          <div id="timeline">
-            <div id="line-container">
-              <div id="line"></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
     <div class="footer">
       <div class="row">
@@ -86,57 +45,9 @@
 
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-    <script src="js/handlebars.js"></script>
-    <script src="js/tabletop.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
 
-
-    <script id="year-marker-template" type="text/x-handlebars-template">
-      <div class="item year-marker">
-        <div class="inner">
-          <div class="inner2">
-            <div class="timestamp">{{timestamp}}</div>
-            <div class="year">{{year}}</div>
-          </div>
-        </div>
-      </div>
-    </script>
-
-    <script id="post-template" type="text/x-handlebars-template">
-      <div class="item post">
-        <div class="inner">
-          <div class="timestamp">{{timestamp}}</div>
-          <div class="title"><h3>{{title}}</h3></div>
-          <div class="date">{{display_date}}</div>
-          <div class="body">
-            {{#if photo_url}}
-              <img src="{{photo_url}}" alt="">
-            {{/if}}
-            {{#if caption}}
-              <div class="caption">({{caption}})</div>
-            {{/if}}
-            {{#if body}}
-              <div class="text">{{body}}</div>
-            {{/if}}
-            <div class="clearfix">
-              {{#if read_more_url}}
-                <a target="_blank" class="more" href="{{read_more_url}}">READ MORE</a>
-                <div class="share">
-                  <a href="#" class="share-trigger"></a>
-                  <div class="share-popup">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{read_more_url}}" data-text="{{title}}" data-count="none">Tweet</a>
-                    <a class="facebook-share-button" name="fb_share" type="button" share_url="{{read_more_url}}">Share</a>
-                  </div>
-                </div>
-              {{/if}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
   </body>
 </html>
